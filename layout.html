@@ -16,6 +16,7 @@
       </div>
 
       <div id="title-container">
+        <span id="game-prefix"></span>
         <span id="game-title"></span>
       </div>
 
@@ -33,15 +34,10 @@
       <div id="host-three" class="host-box"></div>
       <div id="host-four" class="host-box"></div>
 
-      <div id="tracker-one"></div>
-      <div id="tracker-info-one" class="tracker-info"></div>
-      <div id="tracker-two"></div>
-      <div id="tracker-info-two" class="tracker-info"></div>
-      <div id="tracker-three"></div>
-      <div id="tracker-info-three" class="tracker-info"></div>
-
-      <iframe id="chat" src="https://streamlabs.com/widgets/chat-box/v1/CE59A1D8FEF31BEC37ED" width="0" height="0"></iframe>
-      <iframe id="alerts" src="https://streamlabs.com/alert-box/v3/CE59A1D8FEF31BEC37ED?tiltifydonations=1&mute=1" width="0" height="0"></iframe>
+      <div id="aux-one" class="aux-box"></div>
+      <div id="aux-two" class="aux-box"></div>
+      <div id="aux-three" class="aux-box"></div>
+      <div id="aux-four" class="aux-box"></div>
 
       <div id="info-boxes">
         <div id="latest-donation-box" class="info-box active">
@@ -49,11 +45,19 @@
           <div id="latest-donation">TBD</div>
         </div>
 
+        <div id="commentators-box" class="info-box">
+          <span class="label">Commentating</span>
+          <div id="commentators"></div>
+        </div>
+
         <div id="next-game-box" class="info-box">
           <span class="label">Next Game</span>
           <div id="next-game"></div>
         </div>
       </div>
+
+      <iframe id="chat" src="https://streamlabs.com/widgets/chat-box/v1/CE59A1D8FEF31BEC37ED" width="0" height="0"></iframe>
+      <iframe id="alerts" src="https://streamlabs.com/alert-box/v3/CE59A1D8FEF31BEC37ED?tiltifydonations=1&mute=1" width="0" height="0"></iframe>
     </div>
 
     <script type="text/javascript">
@@ -69,9 +73,12 @@
       if (params.has('countdown')) insertCountdown();
       if (params.has('standbytitle')) document.getElementById('stand-by-title').textContent = params.get('standbytitle');
       if (params.has('standbysubtitle')) document.getElementById('stand-by-subtitle').textContent = params.get('standbysubtitle');
+      if (params.has('gameprefix')) document.getElementById('game-prefix').textContent = params.get('gameprefix');
       if (params.has('gametitle')) document.getElementById('game-title').textContent = params.get('gametitle');
       if (params.has('nextgame')) document.getElementById('next-game').textContent = params.get('nextgame');
       if (params.has('player')) document.getElementById('host-one').textContent = params.get('player');
+      if (params.has('nocomms')) document.getElementById('commentators-box').classList.add('skip');
+      if (params.has('nonext')) document.getElementById('next-game-box').classList.add('skip');
 
       if (params.has('spreadinfo')) {
         document.getElementById('info-boxes').classList.add('spread');

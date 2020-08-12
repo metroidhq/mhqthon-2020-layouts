@@ -108,11 +108,17 @@
 }
 
 #container #chat,
-#container #tracker-one,
-#container #tracker-two,
-#container #tracker-three,
+#container .aux-box,
 #container .host-box {
   background-color: rgba(0, 0, 0, 0.7);
+}
+
+#container .aux-box {
+  position: absolute;
+  display: flex;
+  height: 0px;
+  font-size: 0px;
+  z-index: 1;
 }
 
 #container .host-box {
@@ -194,6 +200,7 @@
   flex: 1;
   margin: 0 calc(var(--element-margin) / 2);
   background-color: rgba(0, 0, 0, 0.7);
+  overflow-y: hidden;
 }
 
 #container #info-boxes.spread .info-box:first-of-type {

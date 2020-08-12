@@ -1,4 +1,4 @@
-# MHQthon 2019 Layouts
+# MHQthon 2020 Layouts
 
 ## Getting Started
 To get started, clone or download & unzip this repo onto your computer in a place that OBS Studio or your broadcasting software of choice can access local HTML files.
@@ -14,7 +14,7 @@ To get started, clone or download & unzip this repo onto your computer in a plac
 2) Add a new Browser source to your new scene. Name it `Global Overlay`.
 
 3) Set the following properties:
-* URL `C:/path/to/the/downloaded/files/global.html`
+* URL `file://C:/path/to/the/downloaded/files/global.html`
 * Width `1920`
 * Height `1080`
 * FPS `30`
@@ -31,7 +31,7 @@ To get started, clone or download & unzip this repo onto your computer in a plac
 * FPS `30`
 * Custom CSS
 ```css
-#game-title::after { content: 'MHQthon 2019'; }
+#game-title::after { content: 'MHQthon 2020'; }
 #next-game::after { content: '<Next Game in Schedule>'; }
   ```
 
@@ -46,7 +46,7 @@ For each game your location is streaming, do the following steps:
 3) Add a new Browser source below `Global Overlay`. Name it `<Game Name> Overlay`.
 
 4) Set the following properties:
-* URL `C:/path/to/the/downloaded/files/layout.html?layout=<Layout Name>`
+* URL `file://C:/path/to/the/downloaded/files/layout.html?layout=<Layout Name>`
 * Width `1920`
 * Height `1080`
 * FPS `30`
@@ -67,13 +67,13 @@ For each game your location is streaming, do the following steps:
 3) Add a new Browser source below `Global Overlay`. Name it `Stand By Overlay`.
 
 4) Set the following properties:
-* URL `C:/path/to/the/downloaded/files/layout.html`
+* URL `file://C:/path/to/the/downloaded/files/layout.html`
 * Width `1920`
 * Height `1080`
 * FPS `30`
 * Custom CSS
 ```css
-#game-title::after { content: 'MHQthon 2019'; }
+#game-title::after { content: 'MHQthon 2020'; }
 #next-game::after { content: '<Next Game in Schedule>'; }
 #stand-by-title::after { content: 'Returning Shortly'; }
   ```
@@ -88,14 +88,14 @@ For each game your location is streaming, do the following steps:
 3) Add a new Browser source below `Global Overlay`. Name it `Stand By Overlay`.
 
 4) Set the following properties:
-* URL `C:/path/to/the/downloaded/files/layout.html?countdown`
+* URL `file://C:/path/to/the/downloaded/files/layout.html?countdown&nocomms`
 * Width `1920`
 * Height `1080`
 * FPS `30`
 * Custom CSS
 ```css
-#game-title::after { content: 'MHQthon 2019';}
-#next-game::after { content: 'Metroid: Zero Mission';}
+#game-title::after { content: 'MHQthon 2020';}
+#next-game::after { content: 'Metroid Fusion';}
   ```
 
 5) Add your desktop audio source and a source for Metroid music looping playback of your choice.
@@ -108,23 +108,21 @@ For each game your location is streaming, do the following steps:
 3) Add a new Browser source below `Global Overlay`. Name it `Ending Overlay`.
 
 4) Set the following properties:
-* URL `C:/path/to/the/downloaded/files/layout.html`
+* URL `file://C:/path/to/the/downloaded/files/layout.html?nocomms&nonext`
 * Width `1920`
 * Height `1080`
 * FPS `30`
 * Custom CSS
 ```css
-#game-title::after { content: 'MHQthon 2019'; }
-#next-game::after { content: '???'; }
+#game-title::after { content: 'MHQthon 2020'; }
 #stand-by-title::after { content: 'See You Next Year!'; }
-#stand-by-subtitle::after { content: 'metroidhq.com'; }
   ```
 
 5) Add your desktop audio source and a source for Metroid music looping playback of your choice.
 
 ## Notes
 
-* Valid Layout Names are `host`, `nes`, `nesrace`, `snes`, `snesrace`, `snesrando`, `fullscreen`, `fullscreenrace`, `fullscreenrando`, `fullscreenrandorace`, `widescreen`, `widescreenrace`, `gb`, `gbrace`, `gba`, `gbarace`, `gbarando`, `gbarandorace`, `gbarandorace3p`, `ds`, `dsrace`, `dstall`, `dstallrace`, `3ds`, & `3dsrace`.
+* Valid Layout Names are `host`, `nes`, `nesrace2p`, `snes`, `snesrace2p`, `snesrando`, `fullscreen`, `fullscreenrace2p`, `fullscreenrando`, `fullscreenrandorace2p`, `widescreen`, `widescreenrace2p`, `gb`, `gbrace2p`, `gba`, `gbarace2p`, `gbarando`, `gbarandorace2p`, `gbarandorace3p`, `ds`, `dsrace2p`, `dstall`, `dstallrace2p`, `3ds`, & `3dsrace2p`.
   * If you provide an invalid Layout Name, it should be immediately evident in the rendering of the layout.
 * If you are the last game on the schedule, set the `#next-game` line of CSS to `Nothing` or the met incentive game goal.
 * For some of the older consoles like NES or SNES, you may have to skew the game capture, as the fullscreen output of the game is not the native resolution of the console.
