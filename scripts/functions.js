@@ -10,7 +10,7 @@ function startDataSlideshow() {
 };
 
 function insertCountdown() {
-  var timespan = countdown(null, new Date('Fri Aug 14 2020 11:00:00 GMT-0700 (PDT)'));
+  var timespan = countdown(null, new Date('Mon Aug 17 2020 16:00:00 GMT-0700 (PDT)'));
 
   document.getElementById('stand-by-title').innerText =
       ('0' + timespan.hours).slice(-2) + ':' +
